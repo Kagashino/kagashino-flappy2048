@@ -1,10 +1,6 @@
 
 
-	if( typeof(Storage) !== "undefined" ){
-		if(localStorage.getItem("flappy2048best")==null){
-			localStorage.setItem("flappy2048best", 0);
-		}
-	}
+	
 	/* 游戏数据 */
 	var game = {
 		playing: true,
@@ -12,7 +8,8 @@
 		block: setTimeout(moveBlock,20),
 		isCollise: false,
 		dropRange: 10,
-		score: 0
+		score: 0,
+		highScore: 0
 	}
 
 	/* 游戏数据 */
@@ -20,7 +17,10 @@
 		score : document.getElementById('gScore'),
 		best : document.getElementById('gBest')
 	}
-	text.best.innerHTML = localStorage.getItem("flappy2048best");
+
+
+
+	
 
 	/* 随机障碍物位置 */
 	var Y = function(){
@@ -33,6 +33,7 @@
 
 	var bird = document.getElementById('bird');
 	var blocks = document.querySelectorAll('.block');
+	getHighScore(0);
 	initBlock();
 
 	/* 初始化位置 */
@@ -138,10 +139,26 @@
 
 	/*获取最高分*/
 	function getHighScore(score){
-		if(score>localStorage.getItem("flappy2048best")){
-			localStorage.setItem("flappy2048best",score);
+
+		/* F**K IE (兼容没有LOCALSTORAGE的浏览器) */
+		if( typeof(Storage) !== "undefined" && typeof(localStorage) !== "undefined" ){
+			if(localStorage.getItem("flappy2048best")==null){
+				/*如果为空，最高分为0*/
+				localStorage.setItem("flappy2048best", 0);
+			} else {
+				game.highScore = localStorage.getItem("flappy2048best");
+			}
+
+			if(score>localStorage.getItem("flappy2048best")){
+
+				localStorage.setItem("flappy2048best",score);
+				game.highScore = score;
+			}
+		} else if(score > game.highScore){
+			game.highScore = score;
 		}
-		text.best.innerHTML = localStorage.getItem("flappy2048best");
+
+		text.best.innerHTML = game.highScore;
 	}
 	/* 判负 */
 	function lost(bump){
