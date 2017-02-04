@@ -1,6 +1,6 @@
 *{ margin: 0; padding: 0; }
 #center{ margin: 0 auto; width: 500px; }
-#pannel { width: 500px; height: 495px; background: #BBADA0; position: relative; overflow: hidden; }
+#pannel { width: 500px; height: 495px; background: #bbada0; position: relative; overflow: hidden; }
 #start { margin: 10px; width: 150px; height: 50px; }
 #bird{ width: 100px; height: 100px; position: absolute; top: 370px ; left : 15px; font-size: 3em; text-align: center; line-height: 100px; z-index: 500 }
 .bgrid { margin-left: 15px; margin-top: 15px; width: 100px; height: 100px; background: rgba(238, 228, 218, 0.35); display: inline-block; }
