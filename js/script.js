@@ -1,7 +1,8 @@
-if( typeof(Storage) !== "undefined" ){
+
+
+	if( typeof(Storage) !== "undefined" ){
 		if(localStorage.getItem("flappy2048best")==null){
 			localStorage.setItem("flappy2048best", 0);
-
 		}
 	}
 	/* 游戏数据 */
@@ -78,7 +79,7 @@ if( typeof(Storage) !== "undefined" ){
 
 		text.score.innerHTML = game.score;
 
-		for(var i = 0; i < 2; i++){
+		for(var i = 0; i < 4; i++){
 			blocks[i].style.left = blocks[i].offsetLeft - 5 + "px";
 			if(blocks[i].offsetLeft < -100){
 				resetBlock(blocks[i],i);
