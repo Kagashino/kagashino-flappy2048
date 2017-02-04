@@ -1,0 +1,21 @@
+*{ margin: 0; padding: 0; }
+#center{ margin: 0 auto; width: 500px; }
+#pannel { width: 500px; height: 495px; background: #BBADA0; position: relative; overflow: hidden; }
+#start { margin: 10px; width: 150px; height: 50px; }
+#bird{ width: 100px; height: 100px; position: absolute; top: 370px ; left : 15px; font-size: 3em; text-align: center; line-height: 100px; z-index: 500 }
+.bgrid { margin-left: 15px; margin-top: 15px; width: 100px; height: 100px; background: rgba(238, 228, 218, 0.35); display: inline-block; }
+.block { width: 100px; height: 100px; background: #eee4da ; position: absolute; z-index: 100; }
+.scoreInfo { margin: 5px; border-radius: 5px; display: inline-block; width: 80px; height: 40px; background: #ba5e33; color: #fff; font-family: "Arial","Microsoft Yahei"; }
+.scoreInfo span{ font-weight: bold; }
+.lv1{ color:#444; background-color: #eee4da; }
+.lv2{ color:#444; background-color: #ffa65e; }
+.lv4{ color:#444; background-color: #f67238; }
+.lv8{ color:#fff; background-color: #ff4668; }
+.lv16{ color:#fff; background-color: #a3667a; }
+.lv32{ color:#fff; background-color: #6c5adc; }
+.lv64{ color:#fff; background-color: #4d83fb; }
+.lv128{ color:#fff; background-color: #3e7442; }
+.lv256{ color:#fff; background-color: #879d86; }
+.lv512{ color:#fff; background-color: #606060; }
+.lv1024{ color:#fff; background-color: #343434; }
+.lv2048{ color:#fff; background-color: #141414; }
